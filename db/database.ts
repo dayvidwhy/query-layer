@@ -37,6 +37,44 @@ export const Users: ModelDefined<
     tableName: "Users"
 });
 
+interface PasswordAttributes {
+    id: string;
+    password: string;
+};
+
+export const Passwords: ModelDefined<
+    PasswordAttributes,
+    PasswordAttributes
+> = db.define("Passwords", {
+    id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        primaryKey: true
+    },
+    password: {
+        type: DataTypes.STRING,
+        allowNull: false
+    }
+}, {
+    tableName: "Passwords"
+});
+
+Users.hasOne(Passwords, {
+    foreignKey: "id",
+    onDelete: "CASCADE"
+});
+
+Passwords.belongsTo(Users, {
+    foreignKey: "id",
+    onDelete: "CASCADE"
+});
+
+export default {
+    db,
+    Users,
+    Passwords
+};
+
 (async () => {
     await db.sync();
 })();
