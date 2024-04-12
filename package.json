@@ -1,0 +1,28 @@
+{
+  "name": "query-layer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsx ./server/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@apollo/server": "^4.10.2",
+    "graphql": "^16.8.1",
+    "sequelize": "^6.37.2",
+    "sqlite3": "^5.1.7",
+    "tsx": "^4.7.2"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.56.8",
+    "@types/node": "^20.12.7",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
+    "@typescript-eslint/parser": "^7.6.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  }
+}
